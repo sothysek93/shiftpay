@@ -68,14 +68,16 @@ Take control of your shift wages and make sure you get paid every dollar you ear
 
 ## 2. Store Graphic Assets
 
-All store graphic assets are prepared in the repository:
+All store graphic assets are prepared and optimized in the repository:
 
 | Asset | Specifications | Path |
 | :--- | :--- | :--- |
 | **App Icon** | `512 × 512 PNG (32-bit, max 1024KB)` | [`assets/store/icon_512x512.png`](file:///Users/shorthy/Freelance/06_mobile_and_web_apps/flutter_mobile/shiftpay/assets/store/icon_512x512.png) |
-| **Feature Graphic** | `1024 × 500 PNG/JPEG (no alpha)` | [`assets/store/feature_graphic_1024x500.png`](file:///Users/shorthy/Freelance/06_mobile_and_web_apps/flutter_mobile/shiftpay/assets/store/feature_graphic_1024x500.png) |
-| **Dark Screenshot** | `1080 × 2400 PNG` | [`assets/store/screenshots/screenshot_dark_calculator.png`](file:///Users/shorthy/Freelance/06_mobile_and_web_apps/flutter_mobile/shiftpay/assets/store/screenshots/screenshot_dark_calculator.png) |
-| **Light Screenshot** | `1080 × 2400 PNG` | [`assets/store/screenshots/screenshot_light_calculator.png`](file:///Users/shorthy/Freelance/06_mobile_and_web_apps/flutter_mobile/shiftpay/assets/store/screenshots/screenshot_light_calculator.png) |
+| **Feature Graphic** | `1024 × 500 PNG (Rich Obsidian Grid & UI Preview)` | [`assets/store/feature_graphic_1024x500.png`](file:///Users/shorthy/Freelance/06_mobile_and_web_apps/flutter_mobile/shiftpay/assets/store/feature_graphic_1024x500.png) |
+| **Screenshot 1: Dashboard** | `1080 × 2400 PNG (Gross pay hero & time pickers)` | [`assets/store/screenshots/01_shift_calculator_dashboard.png`](file:///Users/shorthy/Freelance/06_mobile_and_web_apps/flutter_mobile/shiftpay/assets/store/screenshots/01_shift_calculator_dashboard.png) |
+| **Screenshot 2: Rules Modal** | `1080 × 2400 PNG (Overtime & gross pay rules)` | [`assets/store/screenshots/02_shift_rules_modal.png`](file:///Users/shorthy/Freelance/06_mobile_and_web_apps/flutter_mobile/shiftpay/assets/store/screenshots/02_shift_rules_modal.png) |
+| **Screenshot 3: Night Differential** | `1080 × 2400 PNG (Night premium & wage multipliers)` | [`assets/store/screenshots/03_night_differential_and_wages.png`](file:///Users/shorthy/Freelance/06_mobile_and_web_apps/flutter_mobile/shiftpay/assets/store/screenshots/03_night_differential_and_wages.png) |
+| **Screenshot 4: Shift History** | `1080 × 2400 PNG (Saved shifts & weekly reports)` | [`assets/store/screenshots/04_shift_history_and_presets.png`](file:///Users/shorthy/Freelance/06_mobile_and_web_apps/flutter_mobile/shiftpay/assets/store/screenshots/04_shift_history_and_presets.png) |
 
 ---
 
