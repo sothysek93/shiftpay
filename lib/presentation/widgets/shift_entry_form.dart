@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import '../../core/services/analytics_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../providers/shift_providers.dart';
 import 'scale_button.dart';
@@ -119,22 +120,27 @@ class ShiftEntryForm extends ConsumerWidget {
             child: Row(
               children: [
                 _buildPresetPill(colors, '9–5 Day', () {
+                  AnalyticsService().logPresetApplied('9-5 Day');
                   notifier.applyPreset(inHour: 9, inMin: 0, outHour: 17, outMin: 0, breakMins: 30);
                 }),
                 const SizedBox(width: 6),
                 _buildPresetPill(colors, '3–11 Eve', () {
+                  AnalyticsService().logPresetApplied('3-11 Eve');
                   notifier.applyPreset(inHour: 15, inMin: 0, outHour: 23, outMin: 0, breakMins: 30);
                 }),
                 const SizedBox(width: 6),
                 _buildPresetPill(colors, '11–7 Night', () {
+                  AnalyticsService().logPresetApplied('11-7 Night');
                   notifier.applyPreset(inHour: 23, inMin: 0, outHour: 7, outMin: 0, breakMins: 30);
                 }),
                 const SizedBox(width: 6),
                 _buildPresetPill(colors, '12h Day (7–7)', () {
+                  AnalyticsService().logPresetApplied('12h Day (7-7)');
                   notifier.applyPreset(inHour: 7, inMin: 0, outHour: 19, outMin: 0, breakMins: 60);
                 }),
                 const SizedBox(width: 6),
                 _buildPresetPill(colors, '12h Night (7–7)', () {
+                  AnalyticsService().logPresetApplied('12h Night (7-7)');
                   notifier.applyPreset(inHour: 19, inMin: 0, outHour: 7, outMin: 0, breakMins: 60);
                 }),
               ],

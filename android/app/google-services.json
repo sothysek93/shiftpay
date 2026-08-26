@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "92963925931",
+    "project_id": "shiftpay-7e0ff",
+    "storage_bucket": "shiftpay-7e0ff.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92963925931:android:6f59a557cee9b7f3a52cee",
+        "android_client_info": {
+          "package_name": "com.bondaanh.shiftpay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmuucT8MxzjPUJ8bt1k52VZ0-0Gm6criQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

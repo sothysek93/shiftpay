@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../core/services/analytics_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../providers/shift_providers.dart';
 import 'scale_button.dart';
@@ -64,6 +65,10 @@ class NightDiffCard extends ConsumerWidget {
                   onChanged: (val) {
                     HapticFeedback.selectionClick();
                     notifier.setNightDiff(nightConfig.copyWith(enabled: val));
+                    AnalyticsService().logNightDiffToggled(
+                      enabled: val,
+                      bonusRate: nightConfig.bonusRate,
+                    );
                   },
                 ),
               ),

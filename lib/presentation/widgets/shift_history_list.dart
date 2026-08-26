@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import '../../core/services/analytics_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/shift_calculator.dart';
 import '../../models/shift_model.dart';
@@ -375,8 +376,11 @@ class ShiftHistoryList extends ConsumerWidget {
               onTap: () async {
                 Navigator.pop(ctx);
                 final unlocked = await unlockNotifier.watchAdToUnlock();
-                if (unlocked && context.mounted) {
-                  _showExportDialog(context, history, currency);
+                if (unlocked) {
+                  AnalyticsService().logRewardedAdUnlocked();
+                  if (context.mounted) {
+                    _showExportDialog(context, history, currency);
+                  }
                 }
               },
               child: Container(

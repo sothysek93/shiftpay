@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../core/services/analytics_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../providers/shift_providers.dart';
 import '../widgets/adjustments_card.dart';
@@ -50,6 +51,7 @@ class ShiftCalculatorScreen extends ConsumerWidget {
             onTap: () {
               HapticFeedback.selectionClick();
               ref.read(themeModeProvider.notifier).toggleTheme();
+              AnalyticsService().logThemeChanged(isDark ? 'light' : 'dark');
             },
             child: Container(
               margin: const EdgeInsets.only(right: 8),
@@ -71,6 +73,7 @@ class ShiftCalculatorScreen extends ConsumerWidget {
           ScaleButton(
             onTap: () {
               HapticFeedback.selectionClick();
+              AnalyticsService().logCalculationRulesOpened();
               _showHowItWorksModal(context);
             },
             child: Container(

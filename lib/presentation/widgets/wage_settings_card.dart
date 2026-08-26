@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../core/constants/app_constants.dart';
+import '../../core/services/analytics_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../providers/shift_providers.dart';
 import 'scale_button.dart';
@@ -281,6 +282,7 @@ class _WageSettingsCardState extends ConsumerState<WageSettingsCard> {
                       onTap: () {
                         HapticFeedback.selectionClick();
                         notifier.setCurrency(c);
+                        AnalyticsService().logCurrencyChanged(c);
                         Navigator.pop(ctx);
                       },
                       child: Container(

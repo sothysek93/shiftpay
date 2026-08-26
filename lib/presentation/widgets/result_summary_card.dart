@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../core/services/analytics_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/shift_calculator.dart';
 import '../../providers/shift_providers.dart';
@@ -254,6 +255,13 @@ class ResultSummaryCard extends ConsumerWidget {
                 child: ScaleButton(
                   onTap: () async {
                     await ref.read(shiftHistoryProvider.notifier).saveCurrentShift();
+                    AnalyticsService().logShiftSaved(
+                      grossPay: result.grossPay,
+                      netHours: result.netPaidHours,
+                      otHours: result.otHours,
+                      hasNote: input.note.trim().isNotEmpty,
+                      currency: prefs.currency,
+                    );
                     if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
@@ -321,6 +329,10 @@ class ResultSummaryCard extends ConsumerWidget {
                       note: input.note,
                     );
                     Clipboard.setData(ClipboardData(text: summary));
+                    AnalyticsService().logShiftSummaryCopied(
+                      grossPay: result.grossPay,
+                      netHours: result.netPaidHours,
+                    );
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Row(

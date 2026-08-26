@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../core/services/analytics_service.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/shift_calculator.dart';
 import '../../models/shift_model.dart';
@@ -181,6 +182,10 @@ class WeeklySummaryDialog extends StatelessWidget {
               onTap: () {
                 HapticFeedback.lightImpact();
                 Clipboard.setData(ClipboardData(text: report));
+                AnalyticsService().logWeeklyReportCopied(
+                  shiftCount: shifts.length,
+                  totalGross: totalGross,
+                );
                 Navigator.pop(context);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
