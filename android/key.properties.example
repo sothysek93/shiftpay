@@ -1,0 +1,8 @@
+# Template for release signing configuration
+# Copy this file to android/key.properties and set your keystore values.
+# NEVER commit key.properties or .jks files to Git.
+
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=shiftpay
+storeFile=../shiftpay-release.jks
